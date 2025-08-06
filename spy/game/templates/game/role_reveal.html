@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<script src="{% static 'flipcard.js' %}" defer></script>
+
+<div class="roles">
+  <h2 class="pass">Pass the phone to {{ player.name }}</h2>
+
+  <div class="card-container" onclick="handleCardClick()">
+  <div class="card-flip" id="flip-card">
+    <div class="card-face card-front">
+      <p>{{ player.name }}</p>
+    </div>
+    <div class="card-face card-back">
+      <p>{{ player.role }}</p>
+    </div>
+  </div>
+</div>
+
+  <form id="next-form" method="post" action="{% url 'game:role_reveal' %}" style="display: none;">
+  {% csrf_token %}
+  <button type="submit" name="next" id="next-button">Next Player</button>
+</form>
+</div>
+{% endblock %}

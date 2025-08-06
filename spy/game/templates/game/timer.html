@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="timer-card-container">
+  <div class="timer-card">
+    <h2 class="timer-label">Timer:</h2>
+    <span id="timer" data-minutes="{{ duration }}">{{ duration }}:00</span>
+
+    <div class="timer-buttons">
+      <button id="start-btn">Start Timer</button>
+      <form method="post" action="{% url 'game:game_over' %}" id="end-game-form">
+        {% csrf_token %}
+        <button type="submit" id="end-btn">End Game</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'timer.js' %}"></script>
+
+{% endblock %}

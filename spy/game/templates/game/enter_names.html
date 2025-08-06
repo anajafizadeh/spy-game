@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}
+Players Names
+{%endblock%}
+
+{%block content%}
+<form method="post" class="site-form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Start Game</button>
+</form>
+{%endblock%}
