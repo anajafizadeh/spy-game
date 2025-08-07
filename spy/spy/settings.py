@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-$vxlvj9!sba72)0*c)cz6_9gbq0&@)6d91^th6(0u)=6y=zpns
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['spy-game-qz5d.onrender.com']
 
 
 # Application definition
